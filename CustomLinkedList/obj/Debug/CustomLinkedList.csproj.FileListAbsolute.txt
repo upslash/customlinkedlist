@@ -1,0 +1,6 @@
+c:\users\crice\documents\visual studio 2015\Projects\CustomLinkedList\CustomLinkedList\bin\Debug\CustomLinkedList.exe.config
+c:\users\crice\documents\visual studio 2015\Projects\CustomLinkedList\CustomLinkedList\bin\Debug\CustomLinkedList.exe
+c:\users\crice\documents\visual studio 2015\Projects\CustomLinkedList\CustomLinkedList\bin\Debug\CustomLinkedList.pdb
+c:\users\crice\documents\visual studio 2015\Projects\CustomLinkedList\CustomLinkedList\obj\Debug\CustomLinkedList.csprojResolveAssemblyReference.cache
+c:\users\crice\documents\visual studio 2015\Projects\CustomLinkedList\CustomLinkedList\obj\Debug\CustomLinkedList.exe
+c:\users\crice\documents\visual studio 2015\Projects\CustomLinkedList\CustomLinkedList\obj\Debug\CustomLinkedList.pdb
