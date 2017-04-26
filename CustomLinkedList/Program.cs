@@ -29,6 +29,20 @@ namespace CustomLinkedList
                 }
             }
 
+            public Node Find(object data)
+            {
+                Node Current = Head;
+                while(Current.Value != data)
+                {
+                    Current = Current.Next;
+                    if(Current == null)
+                    {
+                        return null;
+                    }
+                }
+                return Current;
+            }
+
             public void AddFirst(Object objectToAdd)
             {
                 Node addMe = new Node();
@@ -61,26 +75,62 @@ namespace CustomLinkedList
                     Current.Next = addMe;
                 }
             }
+
+            public void AddBefore(Object insert, Node beforeMe)
+            {
+                Node Current = Head;
+
+                Node addMe = new Node();
+                addMe.Value = insert;
+                addMe.Next = beforeMe;
+
+                // Check if there are any nodes beforeMe
+                if(Current == beforeMe)
+                {
+                    addMe.Next = beforeMe;
+                }
+                else
+                {
+                    while (Current.Next != beforeMe)
+                    {
+                        Current = Current.Next;
+                        if (Current.Next == beforeMe)
+                        {
+                            break;
+                        }
+                    }
+                    Current.Next = addMe;
+                }
+            }
+
+            public void AddAfter(Object insert, Node afterMe)
+            {
+                Node addMe = new Node();
+                addMe.Value = insert;
+                addMe.Next = afterMe.Next;
+                afterMe.Next = addMe;
+            }
         }
 
         static void Main(string[] args)
         {
-            //Console.WriteLine("Example app with custom Linked List implementation");
             LinkedList list = new LinkedList();
             list.AddFirst("Apple");
             list.AddFirst("Orange");
             list.AddLast("Bacon");
+            list.AddFirst("Grape");
+            list.AddFirst("Yam");
             list.PrintAllNotes();
 
-            //LinkedList<string> list = new LinkedList<string>();
-            //list.AddFirst("Apple");
-            //list.AddFirst("Orange");
-            //list.AddLast("Bacon");
+            Console.WriteLine("Now we are going to add an item before Orange");
+            Node addBeforeMe = list.Find("Orange");
+            list.AddBefore("Banana", addBeforeMe);
+            list.PrintAllNotes();
 
-            //foreach (var item in list)
-            //{
-            //    Console.WriteLine(item);
-            //}
+            Console.WriteLine("Now we are going to add an item after Bacon");
+            Node addAfterMe = list.Find("Bacon");
+            list.AddAfter("Strawberry", addAfterMe);
+            list.PrintAllNotes();
 
             Console.ReadLine();
         }
